@@ -49,6 +49,3 @@ pip install fastapi uvicorn openai streamlit
 ```
 
 ---
-
-## 📋 교육 문의
-엘리스 플랫폼 공지사항 참고
