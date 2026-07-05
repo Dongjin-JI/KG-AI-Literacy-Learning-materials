@@ -26,7 +26,11 @@ git clone https://github.com/Dongjin-JI/KG-AI-Literacy-Learning-materials.git
 | `context_lab/` | 나만의 코딩 어시스턴트 만들기 | 30분 |
 
 ### Day 2
-추후 업데이트 예정
+| 폴더 | 실습 내용 | 시간 |
+|------|----------|------|
+| `01_custom_instructions/` | Custom Instruction 만들기 | 90분 |
+
+나머지 세션은 추후 업데이트 예정
 
 ---
 
