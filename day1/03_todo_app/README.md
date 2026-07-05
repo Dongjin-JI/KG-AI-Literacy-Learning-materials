@@ -3,6 +3,10 @@
 ## 목표
 GitHub Copilot **Agent 모드**로 Python 백엔드 + HTML 프론트엔드 구조의
 TODO List 웹 앱을 처음부터 만들어봅니다.
+이번에는 완성된 PRD를 받아쓰는 대신, **힌트만 보고 직접 PRD를 작성**해봅니다.
+
+## 실습 파일
+- `prd-worksheet.md`: PRD 작성에 필요한 힌트만 담긴 워크시트 (직접 채우는 용도)
 
 ---
 
@@ -11,64 +15,44 @@ TODO List 웹 앱을 처음부터 만들어봅니다.
 ### Step 1. 빈 폴더 열기
 VS Code에서 `03_todo_app` 폴더를 열어주세요.
 
-### Step 2. Agent 모드 열기
+### Step 2. PRD 직접 작성하기
+1. `prd-worksheet.md` 파일을 열어서, 각 섹션의 힌트를 참고해 **직접 PRD를 작성**합니다.
+   - 힌트에 나온 기술적인 조건(DB 스키마, API 형식 등)은 반드시 지켜서 작성하세요. 다음 실습(3-2)과 Day2 실습에서 이 구조를 그대로 이어서 사용합니다.
+   - 나머지 설명(프로젝트 소개, UI 설명 등)은 자유롭게 본인 표현으로 채워보세요.
+2. 혼자 쓰기 막막하면 Copilot Chat을 **Ask 모드**로 열고 이렇게 물어봐도 됩니다.
+   ```
+   아래 힌트를 참고해서 TODO 앱 PRD 초안을 같이 작성해줘.
+   (prd-worksheet.md 내용 붙여넣기)
+   ```
+3. 완성한 PRD를 한눈에 보기 좋게 정리해둡니다. (개요 / 핵심 기능 / API 명세 / 기술 요구사항 / 파일 구조)
+
+### Step 3. Agent 모드 열기
 - `Ctrl+Shift+I` (Mac: `Cmd+Shift+I`) 로 Copilot Chat 열기
 - 상단 드롭다운에서 **Agent** 선택
 
-### Step 3. 아래 PRD를 그대로 붙여넣어서 요청하세요
-
+### Step 4. 완성한 PRD로 요청하기
+아래 형식처럼, Step 2에서 직접 작성한 PRD를 그대로 붙여넣어서 요청합니다.
 ```
 아래 PRD를 기반으로 Python 백엔드 + HTML 프론트엔드 구조의
 TODO List 웹 앱을 만들어줘.
 
-## 프로젝트 개요
-- 이름: todo-app
-- 백엔드: Python FastAPI
-- 프론트엔드: HTML + CSS + JavaScript (fetch API)
-- DB: SQLite (sqlite3 표준 라이브러리 사용)
-- 실행: uvicorn main:app --reload
-
-## 핵심 기능
-1. 할 일 추가: 입력창에 텍스트 입력 후 추가 버튼 클릭
-2. 할 일 목록 조회: 전체 목록을 카드 형태로 표시
-3. 완료 처리: 체크박스 클릭으로 완료/미완료 토글
-4. 삭제: 삭제 버튼 클릭으로 항목 제거
-
-## API 명세
-- GET    /todos          전체 할 일 목록 조회
-- POST   /todos          새 할 일 추가 { "title": str }
-- PATCH  /todos/{id}     완료 상태 토글
-- DELETE /todos/{id}     할 일 삭제
-
-## 기술 요구사항
-- DB는 SQLite, 테이블명 todos (id, title, done, created_at)
-- 프론트엔드는 static/index.html 단일 파일로 구성
-- fetch API로 백엔드와 통신 (페이지 새로고침 없이 동작)
-- CORS 설정 포함
-- 깔끔하고 직관적인 UI
-
-## 파일 구조
-main.py          - FastAPI 앱 및 API 엔드포인트
-database.py      - SQLite 연결 및 쿼리 처리
-requirements.txt - 필요 패키지
-static/
-  index.html     - 프론트엔드 (HTML + CSS + JS 단일 파일)
+(직접 작성한 PRD를 여기에 붙여넣기)
 ```
 
-### Step 4. Agent 동작 관찰
+### Step 5. Agent 동작 관찰
 Agent가 파일을 하나씩 생성하는 과정을 지켜보세요.
 - 어떤 순서로 파일을 만드는지
 - 백엔드와 프론트엔드를 어떻게 연결하는지
 - 오류가 생기면 스스로 수정하는지
 
-### Step 5. 설치 및 실행
+### Step 6. 설치 및 실행
 ```bash
 pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 브라우저에서 `http://localhost:8000` 접속
 
-### Step 6. 동작 확인
+### Step 7. 동작 확인
 - 할 일 추가 → 목록에 바로 뜨는지
 - 체크박스 클릭 → 완료 처리되는지
 - 삭제 버튼 → 목록에서 사라지는지
@@ -86,3 +70,7 @@ uvicorn main:app --reload
 > Agent 모드의 핵심은 **코드를 받아서 내가 붙여넣는 게 아니라**
 > Agent가 직접 파일을 생성하고 수정한다는 점입니다.
 > 이것이 "검색처럼 쓰는 AI"와 "코드를 짜는 AI"의 차이입니다.
+>
+> 그리고 PRD를 직접 써본 경험도 중요합니다. **결과물의 완성도는 PRD를 얼마나
+> 명확하게 쓰느냐에 달려있습니다.** 힌트만 보고 직접 채워보면서, 좋은 요구사항
+> 문서가 무엇인지 체감해보세요.

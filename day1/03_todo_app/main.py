@@ -3,8 +3,9 @@
 # 목표: GitHub Copilot Agent 모드로 TODO 웹 앱을 만들어봅니다.
 #
 # [사용 방법]
-# Copilot Chat을 열고 아래 PRD를 그대로 붙여넣어서 요청해보세요.
-# PRD는 README.md 에 있습니다.
+# prd-worksheet.md 의 힌트를 참고해 PRD를 직접 작성한 뒤,
+# Copilot Chat Agent 모드에 그 PRD를 붙여넣어서 요청해보세요.
+# 자세한 순서는 README.md 를 참고하세요.
 # ============================================================
 
 # 이 파일은 비워두세요.
