@@ -80,7 +80,7 @@ if prompt := st.chat_input("코드 관련 질문을 입력하세요..."):
             result = st.write_stream(
                 chunk.choices[0].delta.content or ""
                 for chunk in response
-                if chunk.choices[0].delta.content
+                if chunk.choices and chunk.choices[0].delta.content
             )
 
         except Exception as e:
