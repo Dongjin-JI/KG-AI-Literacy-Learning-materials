@@ -1,4 +1,4 @@
-# 실습 2 - TODO List 앱 만들기
+# 실습 3-1 - TODO List 앱 만들기
 
 ## 목표
 GitHub Copilot **Agent 모드**로 Python 백엔드 + HTML 프론트엔드 구조의
@@ -9,7 +9,7 @@ TODO List 웹 앱을 처음부터 만들어봅니다.
 ## 실습 방법
 
 ### Step 1. 빈 폴더 열기
-VS Code에서 `02_todo_app` 폴더를 열어주세요.
+VS Code에서 `03_todo_app` 폴더를 열어주세요.
 
 ### Step 2. Agent 모드 열기
 - `Ctrl+Shift+I` (Mac: `Cmd+Shift+I`) 로 Copilot Chat 열기
