@@ -1,5 +1,3 @@
-<!-- TODO: 이 실습 구성은 초안입니다. 실제 진행 전 강사 검토 필요 (미니실습 개수, 난이도 확정 안 됨) -->
-
 # 실습 3 — 컨텍스트 엔지니어링 심화 (awesome-copilot 탐색 → Continue.dev로 번역)
 
 ## GitHub Copilot ↔ Continue.dev 대응표
@@ -37,10 +35,6 @@ Copilot 전용 예시라도 문법만 바꾸면 Continue.dev에서 그대로 활
 ## Part 1. Instructions 예시 찾아보고 번역하기
 
 ### Step 1. 예시 살펴보기 (미리 골라둔 예시 — 직접 확인함)
-<!-- TODO: 원래 요청은 "커밋 메시지 생성 스킬" 예시였으나, 저장소 전체 검색 결과
-     "commit"이 포함된 파일이 실제로 존재하지 않아(2026-07 기준 확인) 대신
-     이번 실습 주제와 가장 잘 맞는 실제 존재하는 파일로 교체함. 강사 검토 시
-     원하시는 다른 예시로 바꿔도 됩니다. -->
 
 `instructions/context-engineering.instructions.md`
 (https://github.com/github/awesome-copilot/blob/main/instructions/context-engineering.instructions.md)
