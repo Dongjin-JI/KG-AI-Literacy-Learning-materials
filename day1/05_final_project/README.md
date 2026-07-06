@@ -1,4 +1,21 @@
-# 실습 4 - Copilot을 활용한 나만의 프로젝트 1 (자유 실습)
+# 실습 4 - Continue.dev를 활용한 나만의 프로젝트 1 (자유 실습)
+
+## GitHub Copilot ↔ Continue.dev 대응표
+
+| 개념 | GitHub Copilot | Continue.dev |
+|---|---|---|
+| 상시 지침 (Custom Instructions) | Custom Instructions | **Rules** |
+| 프로젝트 공유 지침 파일 위치 | `.github/copilot-instructions.md` | `.continue/rules/*.md` |
+| 파일 종류별 조건부 지침 | `.github/instructions/*.instructions.md` + `applyTo` | `.continue/rules/*.md` + `globs` |
+| 항상 적용 여부 지정 | (기본이 항상 적용) | `alwaysApply: true/false` |
+| 개인 전역 지침 | 계정 설정 > Personal custom instructions | `~/.continue/rules/*.md` |
+| 재사용 가능한 호출형 프롬프트 (Skill) | Skills / Prompt files | **Prompts** (`.continue/prompts/*.md`, `invokable: true`) |
+| Chat / Agent 모드 | Copilot Chat / Agent mode | Continue Chat / Agent mode |
+| 모델 접근 방식 | GitHub 계정 인증 | Elice API (`apiBase` + `apiKey`, `openai/` 프리픽스 필요) |
+
+> 오늘 실습은 Continue.dev로 진행하지만, 여기서 배우는 개념(지침 자동 적용, 재사용 프롬프트)은 Copilot을 포함한 모든 AI 코딩 툴에 공통으로 존재합니다. 도구 이름만 다를 뿐 사고방식은 동일합니다.
+
+---
 
 ## 목표
 오늘 배운 프롬프트 엔지니어링(TCCOV), Agent 모드, 컨텍스트 엔지니어링을 활용해서
@@ -14,20 +31,20 @@
 정해진 결과물이나 정답이 없는 자유 실습입니다. 아래 순서대로 진행하는 것을 권장합니다.
 
 ```
-1. Ask 모드로 아이디어 구상 & 문서화 (30분)
+1. Chat 모드로 아이디어 구상 & 문서화 (30분)
 2. PRD 작성
 3. Plan 모드로 계획 수립
 4. Agent 모드로 진행
 ```
 
-### Step 1. Ask 모드로 아이디어 구상 & 문서화 (30분)
+### Step 1. Chat 모드로 아이디어 구상 & 문서화 (30분)
 바로 Agent 모드로 코드를 만들기 전에, 먼저 **무엇을 만들지** 충분히 생각하는 시간을 갖습니다.
 
-1. Copilot Chat을 **Ask 모드**로 엽니다. (아직 코드를 만들 단계가 아니므로 Agent 모드가 아닌 Ask 모드를 사용합니다.)
-2. `idea-worksheet.md` 파일을 열고, 아래 내용을 Copilot과 대화하며 채워봅니다.
+1. Continue Chat을 **Chat 모드**로 엽니다. (아직 코드를 만들 단계가 아니므로 Agent 모드가 아닌 Chat 모드를 사용합니다.)
+2. `idea-worksheet.md` 파일을 열고, 아래 내용을 Continue와 대화하며 채워봅니다.
    - 지금 진행 중인 사이드/토이 프로젝트가 있는지
    - 일일/주간 반복 업무 중 자동화하거나 최적화하고 싶은 것이 있는지
-3. 막막하면 Copilot에게 이렇게 물어봐도 됩니다.
+3. 막막하면 Continue에게 이렇게 물어봐도 됩니다.
    ```
    내가 하는 일과 관심사를 정리해볼 건데, 같이 질문해가면서 정리를 도와줘.
    ```
@@ -35,7 +52,7 @@
 
 ### Step 2. PRD 작성
 1. `idea-worksheet.md`에서 정리한 내용을 바탕으로 PRD(요구사항 문서)를 작성합니다.
-2. 혼자 쓰기 막막하면 Ask 모드에서 Copilot에게 초안을 같이 만들어달라고 요청합니다.
+2. 혼자 쓰기 막막하면 Chat 모드에서 Continue에게 초안을 같이 만들어달라고 요청합니다.
    ```
    [Task] 아래 아이디어를 바탕으로 PRD 초안을 같이 작성해줘.
    [Context] (idea-worksheet.md에서 정리한 내용 붙여넣기)
@@ -45,7 +62,7 @@
 3. 완성된 PRD는 별도 파일(예: `PRD.md`)로 저장해둡니다.
 
 ### Step 3. Plan 모드로 계획 수립
-1. 작성한 PRD를 Plan 모드(또는 사용 중인 Copilot 버전에 Plan 모드가 없다면, Agent 모드에서 "먼저 계획부터 세워줘"라고 요청)에 전달합니다.
+1. 작성한 PRD를 Plan 모드(또는 사용 중인 Continue 버전에 Plan 모드가 없다면, Agent 모드에서 "먼저 계획부터 세워줘"라고 요청)에 전달합니다.
 2. 어떤 순서로 파일을 만들지, 어떤 기술적 결정이 필요한지 계획을 세우도록 요청합니다.
    ```
    이 PRD를 구현하기 전에, 어떤 순서로 작업할지 계획부터 세워줘.
@@ -72,7 +89,7 @@
 ---
 
 ## 핵심 포인트
-> 바로 Agent 모드로 뛰어들기보다, **Ask 모드로 충분히 구상 → PRD 작성 → Plan 모드로 계획 수립**
+> 바로 Agent 모드로 뛰어들기보다, **Chat 모드로 충분히 구상 → PRD 작성 → Plan 모드로 계획 수립**
 > 순서를 거치면 훨씬 더 원하는 결과에 가까운 결과물을 얻을 수 있습니다.
 > 오늘 배운 프롬프트 엔지니어링, Agent 모드, 컨텍스트 엔지니어링을
 > 실제로 내가 원하는 것을 만드는 데 조합해서 써보는 것이 목표입니다.

@@ -1,12 +1,12 @@
 # ============================================================
 # [실습 3-1] TODO List 앱 만들기
-# 목표: GitHub Copilot Agent 모드로 TODO 웹 앱을 만들어봅니다.
+# 목표: Continue.dev Agent 모드로 TODO 웹 앱을 만들어봅니다.
 #
 # [사용 방법]
 # prd-worksheet.md 의 힌트를 참고해 PRD를 직접 작성한 뒤,
-# Copilot Chat Agent 모드에 그 PRD를 붙여넣어서 요청해보세요.
+# Continue Chat Agent 모드에 그 PRD를 붙여넣어서 요청해보세요.
 # 자세한 순서는 README.md 를 참고하세요.
 # ============================================================
 
 # 이 파일은 비워두세요.
-# Copilot Agent 모드가 필요한 파일을 자동으로 생성합니다.
+# Continue Agent 모드가 필요한 파일을 자동으로 생성합니다.

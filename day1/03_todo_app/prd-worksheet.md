@@ -1,9 +1,9 @@
 # TODO 앱 PRD 작성 워크시트
 
 아래 힌트만 보고 직접 PRD를 작성해보세요. 완성된 PRD는 Step 4에서
-Copilot Agent 모드에게 그대로 전달할 예정입니다.
+Continue Agent 모드에게 그대로 전달할 예정입니다.
 
-막히면 Copilot Chat을 **Ask 모드**로 열고 이렇게 물어봐도 됩니다.
+막히면 Continue Chat을 **Chat 모드**로 열고 이렇게 물어봐도 됩니다.
 ```
 아래 힌트를 참고해서 TODO 앱 PRD 초안을 같이 작성해줘.
 (이 워크시트 내용을 붙여넣기)

@@ -1,7 +1,24 @@
 # 실습 1 - 버그 찾기 & 수정하기
 
+## GitHub Copilot ↔ Continue.dev 대응표
+
+| 개념 | GitHub Copilot | Continue.dev |
+|---|---|---|
+| 상시 지침 (Custom Instructions) | Custom Instructions | **Rules** |
+| 프로젝트 공유 지침 파일 위치 | `.github/copilot-instructions.md` | `.continue/rules/*.md` |
+| 파일 종류별 조건부 지침 | `.github/instructions/*.instructions.md` + `applyTo` | `.continue/rules/*.md` + `globs` |
+| 항상 적용 여부 지정 | (기본이 항상 적용) | `alwaysApply: true/false` |
+| 개인 전역 지침 | 계정 설정 > Personal custom instructions | `~/.continue/rules/*.md` |
+| 재사용 가능한 호출형 프롬프트 (Skill) | Skills / Prompt files | **Prompts** (`.continue/prompts/*.md`, `invokable: true`) |
+| Chat / Agent 모드 | Copilot Chat / Agent mode | Continue Chat / Agent mode |
+| 모델 접근 방식 | GitHub 계정 인증 | Elice API (`apiBase` + `apiKey`, `openai/` 프리픽스 필요) |
+
+> 오늘 실습은 Continue.dev로 진행하지만, 여기서 배우는 개념(지침 자동 적용, 재사용 프롬프트)은 Copilot을 포함한 모든 AI 코딩 툴에 공통으로 존재합니다. 도구 이름만 다를 뿐 사고방식은 동일합니다.
+
+---
+
 ## 목표
-실무에서 자주 발생하는 버그가 심어진 코드를 Copilot으로 찾아서 수정합니다.
+실무에서 자주 발생하는 버그가 심어진 코드를 Continue.dev로 찾아서 수정합니다.
 **나쁜 프롬프트 vs TCCOV 프롬프트**의 결과 차이를 직접 체감합니다.
 
 ---
@@ -14,7 +31,7 @@
 ## 실습 순서
 
 ### Step 1. 나쁜 프롬프트로 먼저 시도
-Copilot Chat을 열고 아래처럼 요청해보세요.
+Continue 사이드바에서 Chat을 열고(단축키 `Ctrl/Cmd+L`, 버전에 따라 다를 수 있음) 아래처럼 요청해보세요.
 ```
 이 코드 문제 찾아줘
 ```
