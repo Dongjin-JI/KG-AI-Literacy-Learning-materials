@@ -44,6 +44,8 @@ Rules는 워크스페이스에 `.continue/rules/` 폴더 안에 파일을 만들
 - `main.py`, `database.py` : FastAPI + SQLite 백엔드
 - `static/index.html` : 프론트엔드
 - `.continue/rules/project-context.md` : 실습에서 직접 채울 템플릿
+- `templates/ai-service-rules-developer.md`, `templates/ai-service-rules-non-developer.md` :
+  심화 실습 A에서 본인 AI 서비스용으로 채울 템플릿
 
 ## Step 1. 폴더 열기 & 실행 확인
 VS Code에서 `01_rules_custom_instruction` 폴더를 열어주세요.
@@ -88,7 +90,23 @@ Step 2 결과와 비교했을 때 무엇이 달라졌나요?
 | 에러/예외 처리 | ? | ? |
 | 프론트엔드 스타일 일관성 | ? | ? |
 
-## 심화 실습 (시간이 남는다면)
+## 심화 실습 A (시간이 남는다면) — 본인 AI 서비스에 맞는 Rules 작성해보기
+지금까지는 오늘 실습용 TODO 앱을 대상으로 Rules를 연습했습니다.
+이번에는 **실제 여러분이 업무에서 쓰는(또는 쓰고 싶은) AI 서비스**를 대상으로
+Rules를 직접 작성해보는 시간입니다.
+
+1. 아래 두 양식 중 본인 상황에 맞는 것을 하나 고르세요. (`templates/` 폴더)
+   - `templates/ai-service-rules-developer.md` — 코드/API/기술 스택이 있는 개발 업무용
+   - `templates/ai-service-rules-non-developer.md` — 보고서 작성, 데이터 정리,
+     고객 응대 등 코딩 외 업무용
+2. 템플릿을 복사해서 본인 상황에 맞게 채워보세요. 실제 사내 시스템명이나
+   민감 정보는 적지 말고, 패턴만 일반화해서 작성하세요.
+3. 관련 프로젝트(또는 새 폴더)를 Continue.dev로 열고 `.continue/rules/`에
+   저장한 뒤, 관련 요청을 해서 실제로 어떻게 다르게 동작하는지 확인해보세요.
+4. 시간이 되면 옆 사람과 서로의 Rules를 비교해보세요. 같은 "개발자용"이어도
+   업무에 따라 반드시 지킬 것/하지 말아야 할 것이 얼마나 다른지 확인할 수 있습니다.
+
+## 심화 실습 B (참고) — 파일 종류별로 다른 규칙 적용하기 (globs)
 파일 종류별로 다른 규칙을 적용하려면, `.continue/rules/` 안에 `globs` 프론트매터를
 가진 파일을 여러 개 만들 수 있습니다.
 
