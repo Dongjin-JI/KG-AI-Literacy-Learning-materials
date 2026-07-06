@@ -30,13 +30,13 @@ git clone https://github.com/Dongjin-JI/KG-AI-Literacy-Learning-materials.git
 | `02_context_lab/` | 나만의 코딩 어시스턴트 만들기 | 30분 |
 | `03_todo_app/` | TODO List 앱 만들기 (Agent 모드) | 60분 |
 | `04_todo_advanced/` | TODO List 앱 고도화하기 | 60분 |
-| `05_final_project/` | Copilot을 활용한 나만의 프로젝트 1 (자유 실습) | 150분 |
+| `05_final_project/` | Continue.dev를 활용한 나만의 프로젝트 1 (자유 실습) | 150분 |
 
 ### Day 2
 | 폴더 | 실습 내용 | 시간 | 상태 |
 |------|----------|------|------|
 | `01_rules_custom_instruction/` | Rules(지침) 만들기 | 90분 | 확정 |
-| `02_prompts_skills/` | Prompts로 반복 작업 자동화하기 | 90분 | ⚠️ 초안 |
+| `02_prompts_skills/` | Prompts로 반복 작업 자동화하기 | 90분 | 확정 |
 | `03_context_engineering/` | 컨텍스트 엔지니어링 심화 (awesome-copilot 탐색·번역) | 60분 | ⚠️ 초안 |
 | `04_final_project/` | Rules + Prompts를 내 프로젝트에 적용하기 (자유 실습) | 90분 | ⚠️ 초안 |
 
