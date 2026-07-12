@@ -1,24 +1,7 @@
 # 실습 3-1 - TODO List 앱 만들기
 
-## GitHub Copilot ↔ Continue.dev 대응표
-
-| 개념 | GitHub Copilot | Continue.dev |
-|---|---|---|
-| 상시 지침 (Custom Instructions) | Custom Instructions | **Rules** |
-| 프로젝트 공유 지침 파일 위치 | `.github/copilot-instructions.md` | `.continue/rules/*.md` |
-| 파일 종류별 조건부 지침 | `.github/instructions/*.instructions.md` + `applyTo` | `.continue/rules/*.md` + `globs` |
-| 항상 적용 여부 지정 | (기본이 항상 적용) | `alwaysApply: true/false` |
-| 개인 전역 지침 | 계정 설정 > Personal custom instructions | `~/.continue/rules/*.md` |
-| 재사용 가능한 호출형 프롬프트 (Skill) | Skills / Prompt files | **Prompts** (`.continue/prompts/*.md`, `invokable: true`) |
-| Chat / Agent 모드 | Copilot Chat / Agent mode | Continue Chat / Agent mode |
-| 모델 접근 방식 | GitHub 계정 인증 | Elice API (`apiBase` + `apiKey`, `openai/` 프리픽스 필요) |
-
-> 오늘 실습은 Continue.dev로 진행하지만, 여기서 배우는 개념(지침 자동 적용, 재사용 프롬프트)은 Copilot을 포함한 모든 AI 코딩 툴에 공통으로 존재합니다. 도구 이름만 다를 뿐 사고방식은 동일합니다.
-
----
-
 ## 목표
-Continue.dev **Agent 모드**로 Python 백엔드 + HTML 프론트엔드 구조의
+GitHub Copilot **Agent 모드**로 Python 백엔드 + HTML 프론트엔드 구조의
 TODO List 웹 앱을 처음부터 만들어봅니다.
 이번에는 완성된 PRD를 받아쓰는 대신, **힌트만 보고 직접 PRD를 작성**해봅니다.
 
@@ -36,7 +19,7 @@ VS Code에서 `03_todo_app` 폴더를 열어주세요.
 1. `prd-worksheet.md` 파일을 열어서, 각 섹션의 힌트를 참고해 **직접 PRD를 작성**합니다.
    - 힌트에 나온 기술적인 조건(DB 스키마, API 형식 등)은 반드시 지켜서 작성하세요. 다음 실습(3-2)과 Day2 실습에서 이 구조를 그대로 이어서 사용합니다.
    - 나머지 설명(프로젝트 소개, UI 설명 등)은 자유롭게 본인 표현으로 채워보세요.
-2. 혼자 쓰기 막막하면 Continue Chat을 **Chat 모드**로 열고 이렇게 물어봐도 됩니다.
+2. 혼자 쓰기 막막하면 Copilot Chat을 **Ask 모드**로 열고 이렇게 물어봐도 됩니다.
    ```
    아래 힌트를 참고해서 TODO 앱 PRD 초안을 같이 작성해줘.
    (prd-worksheet.md 내용 붙여넣기)
@@ -44,8 +27,8 @@ VS Code에서 `03_todo_app` 폴더를 열어주세요.
 3. 완성한 PRD를 한눈에 보기 좋게 정리해둡니다. (개요 / 핵심 기능 / API 명세 / 기술 요구사항 / 파일 구조)
 
 ### Step 3. Agent 모드 열기
-- Continue 사이드바를 열고(단축키 `Ctrl/Cmd+L`, 버전에 따라 다를 수 있음)
-- 입력창 하단 모드 선택에서 **Agent** 선택
+- `Ctrl+Shift+I` (Mac: `Cmd+Shift+I`) 로 Copilot Chat 열기
+- 상단 드롭다운에서 **Agent** 선택
 
 ### Step 4. 완성한 PRD로 요청하기
 아래 형식처럼, Step 2에서 직접 작성한 PRD를 그대로 붙여넣어서 요청합니다.
@@ -64,7 +47,7 @@ Agent가 파일을 하나씩 생성하는 과정을 지켜보세요.
 
 ### Step 6. 설치 및 실행
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 uvicorn main:app --reload
 ```
 브라우저에서 `http://localhost:8000` 접속
@@ -77,7 +60,7 @@ uvicorn main:app --reload
 ---
 
 ## 막혔을 때
-- 에러 메시지를 그대로 Continue Chat에 붙여넣기
+- 에러 메시지를 그대로 Copilot Chat에 붙여넣기
 - "이 에러 고쳐줘" 한 마디면 Agent가 직접 수정함
 - CORS 에러 → "CORS 설정 추가해줘"
 

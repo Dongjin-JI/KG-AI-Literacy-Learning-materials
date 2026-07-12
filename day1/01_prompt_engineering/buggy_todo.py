@@ -2,14 +2,14 @@
 [실습] 버그 찾기 & 수정하기
 
 아래 코드에는 실무에서 자주 발생하는 버그가 숨어있습니다.
-Continue Chat에 아래 미션을 요청해서 버그를 찾고 수정해보세요.
+Copilot Chat에 아래 미션을 요청해서 버그를 찾고 수정해보세요.
 
 [미션]
 이 코드에서 발생할 수 있는 보안 취약점, 예외 처리 누락,
 리소스 관리 문제를 찾아서 수정된 코드로 고쳐줘.
 
 [힌트 - 막혔을 때만 확인]
-- 코드를 Continue Chat에 붙여넣을 때 어떤 맥락을 같이 주면 더 정확한 답변이 나올까?
+- 코드를 Copilot Chat에 붙여넣을 때 어떤 맥락을 같이 주면 더 정확한 답변이 나올까?
 - TCCOV 형식으로 요청해보세요.
 """
 
@@ -103,7 +103,7 @@ def get_todo_by_id(todo_id):
 if __name__ == "__main__":
     init_db()
 
-    add_todo("Continue.dev 설치")
+    add_todo("GitHub Copilot 설치")
     add_todo("버그 찾기 실습")
 
     todos = get_all_todos()

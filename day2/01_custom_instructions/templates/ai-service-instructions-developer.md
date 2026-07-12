@@ -1,11 +1,8 @@
----
-name: (내 서비스/프로젝트 이름)
-alwaysApply: true
----
 <!--
 개발 업무(코드, API, 서비스 개발 등)에 AI를 쓰는 분들을 위한 양식입니다.
-오늘 실습한 project-context.md와 같은 구조이지만, 오늘 다룬 TODO 앱이 아니라
+오늘 실습한 copilot-instructions.md와 같은 구조이지만, 오늘 다룬 TODO 앱이 아니라
 실제 여러분이 하는(또는 하고 싶은) 개발 업무 기준으로 채워보세요.
+이 파일 내용을 그대로 .github/copilot-instructions.md 에 붙여넣으면 됩니다.
 -->
 
 ## 서비스/프로젝트 개요
