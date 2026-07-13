@@ -104,3 +104,33 @@ pip install fastapi uvicorn openai streamlit
 ```
 
 ---
+
+## 🆘 (백업) Copilot 계정/플랜 문제 시 Continue.dev로 전환하기
+
+> Copilot Pro 플랜 결제가 계정에 반영되지 않는 등 로그인/플랜 문제로 실습을 진행할
+> 수 없는 경우를 대비한 **Day2 전용 백업 자료**입니다. 평소에는 Copilot 기준으로
+> 진행하고, 문제가 생긴 참가자만 아래 방법으로 전환하세요.
+
+### 적용 범위
+Day2의 4개 실습 폴더 각각에 `README.md`(Copilot 기준)와 별도로
+`README-continuedev.md`(Continue.dev 기준) 파일이 함께 들어있습니다.
+Copilot이 정상 동작하는 참가자는 평소처럼 `README.md`를 따라가면 되고,
+계정 문제가 있는 참가자만 같은 폴더의 `README-continuedev.md`를 대신 보면 됩니다.
+(Day1은 해당 없음 — Day1 진행 중 문제가 생기면 그 자리에서 강사에게 안내받으세요.)
+
+### Continue.dev 확장 설치 및 연결
+1. VS Code Extensions에서 **Continue** 검색 후 설치
+2. Continue 설정에서 아래처럼 모델을 연결합니다. (안내받은 API 키로 교체)
+   ```yaml
+   models:
+     - name: GPT-5 mini (Elice)
+       provider: openai
+       model: openai/gpt-5-mini
+       apiBase: <안내받은 Elice API Base URL>
+       apiKey: <안내받은 Elice API Key>
+   ```
+   - 모델명 앞에 `openai/` 프리픽스를 꼭 붙여야 합니다.
+   - 이전 기수에서 Copilot 개인 플랜 가입 문제로 전환했을 때와 동일한 Elice API
+     연결 방식입니다.
+
+---
